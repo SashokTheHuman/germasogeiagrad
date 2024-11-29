@@ -1,309 +1,195 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Germasogeia Hotspots</title>
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-        width: 100%;
-        overflow: hidden;
-        background-image: url("win7.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        font-family: Arial, sans-serif;
-        color: #333;
-      }
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Germasogeia Hotspots</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background-image: url("win7.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
 
-      #content {
-        height: 100%;
-        overflow-y: auto;
-        padding: 20px;
-        box-sizing: border-box;
-      }
+    #content {
+      height: 100%;
+      overflow-y: auto;
+      padding: 20px;
+      box-sizing: border-box;
+    }
 
-      .tab {
-        cursor: pointer;
-        padding: 10px;
-        background-color: #f1f1f1;
-        border: 1px solid #ccc;
-        display: inline-block;
-        margin: 0 5px;
-        border-radius: 5px;
-      }
+    .tab-container {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      z-index: 10;
+      display: flex;
+      flex-wrap: wrap;
+    }
 
-      .tab:hover {
-        background-color: #ddd;
-      }
+    .tab {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 5px;
+    }
 
-      .tab-content {
-        display: none;
-        padding: 10px;
-        border: 1px solid #ccc;
-        background-color: #fff;
-        border-radius: 5px;
-        margin-top: 10px;
-      }
+    .tab:hover {
+      background-color: #ddd;
+    }
 
-      .active {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="content">
-      <h1>Explore Germasogeia</h1>
-      <div>
-        <div class="tab" onclick="openTab('rusmarket')">RusMarket</div>
-        <div class="tab" onclick="openTab('skatepark')">Germasogeia SkatePark</div>
-        <div class="tab" onclick="openTab('berezkaG')">Germasogeia Berezka</div>
-        <div class="tab" onclick="openTab('lidlG')">Germasogeia Lidl</div>
-        <div class="tab" onclick="openTab('eshop')">Cyprus Eshop</div>
-        <div class="tab" onclick="openTab('kfc')">Kfc</div>
-        <div class="tab" onclick="openTab('griver')">Germasogeia River</div>
-        <div class="tab" onclick="openTab('galatex')">Galatex</div>
-        <div class="tab" onclick="openTab('slavianka')">Slavianka</div>
-        <div class="tab" onclick="openTab('social')">Social Factors</div>
-        <div class="tab" onclick="openTab('eco')">Economical Factors</div>
-        <div class="tab" onclick="openTab('cult')">Culture</div>
-        <div class="tab" onclick="openTab('infra')">Infrastructure</div>
-        <div class="tab" onclick="openTab('details')">...</div>
-      </div>
+    .tab-content {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
 
-      <div id="rusmarket" class="tab-content">
-        <h3>RusMarket</h3>
-        <img
-          src="rusmarket.jpg"
-          alt="RusMarket"
-          style="width: 400px; height: 250px"
-        />
-        <p>
-          A wonderful place for your Russian stuff as well as German fakes. Also
-          sells strangely colored Kvass. People interact with this place by buying products and by
-          working as cashiers.
-        </p>
-        <a href="https://maps.app.goo.gl/hG6brKGXJ5sjYJ5Q8" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
+    .tab-content.active {
+      display: block;
+    }
 
-      <div id="skatepark" class="tab-content">
-        <h3>Germasogeia SkatePark</h3>
-        <img
-          src="skatepark1.jpg"
-          alt="Germasogeia SkatePark"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="skatepark2.jpg"
-          alt="Germasogeia SkatePark"
-          style="width: 400px; height: 300px"
-        />
-        <p>
-          The most horrid, vile, infected, dirty place in Germasogeia. All the
-          cool gangsta kids gather there and vape. Most people here are rich and spoiled,
-           they only harm it.
-        </p>
-        <a href="https://maps.app.goo.gl/8oRViDzyuw3qECCSA" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="berezkaG" class="tab-content">
-        <h3>Germasogeia Berezka</h3>
-        <img
-          src="berezka1.jpg"
-          alt="Germasogeia Berezka"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="berezka2.jpg"
-          alt="Germasogeia Berezka"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          An even better place to get Slavic products than RusMarket.
-          Originating in Bulgaria, this store has very fair prices considering
-          import costs. People also interact with this place by buying products and working there.
-        </p>
-        <a href="https://maps.app.goo.gl/VLzqGcmJpqzbq7ft7" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="lidlG" class="tab-content">
-        <h3>Germasogeia Lidl</h3>
-        <img
-          src="lidl.jpg"
-          alt="Germasogeia Lidl"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          A perfect location to legally (or illegally) obtain Axe Dark
-          Temptation, donuts, and Kong Strong. People here also work as cashiers and buy things for themselves.
-        </p>
-        <a href="https://maps.app.goo.gl/cJdpx6nz5Kfjr2ybA" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="eshop" class="tab-content">
-        <h3>Cyprus Eshop</h3>
-        <img
-          src="eshop2.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="eshop1.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          A mid-at-best electronics shop. Very expensive compared to online
-          orders. Mostly people interested in electronics go here.
-        </p>
-        <a href="https://maps.app.goo.gl/FUSZZixFxrVFBHea7" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="kfc" class="tab-content">
-        <h3>Kfc</h3>
-        <img
-          src="kfc2.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="kfc1.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          A great place to eat something and enjoy a pepsi. (this is not an ad) People of all economical backgrounds come here
-          for a treat sometimes.
-        </p>
-        <a href="https://maps.app.goo.gl/guG7UTwRw4yjdTop6" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="griver" class="tab-content">
-        <h3>Germasogeia River</h3>
-        <img
-          src="griver2.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="griver1.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          A place for all the other cool gangsta kids to meet up if the
-          skatepark is overflowing. Its kind of a car park in the summer and a
-          river in the winter. People interact with it by painting graffiti and by littering.
-        </p>
-        <a href="https://maps.app.goo.gl/AMUJHahquB7gsE33A" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="galatex" class="tab-content">
-        <h3>Galatex</h3>
-        <img
-          src="galatex2.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="galatex1.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          A weird location; center of operations for a gang of little kids
-          called the Galatex Mafia, they are harmless but annoying. Overpriced
-          apartments. People who reside here have generally higher incomes.
-        </p>
-        <a href="https://maps.app.goo.gl/wHaWGUdgNj38cVwYA" target="_blank"
-          >View on Google Maps</a
-        >
-      </div>
-
-      <div id="slavianka" class="tab-content">
-        <h3>Slavianka</h3>
-        <img
-          src="slavianka2.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <img
-          src="slavianka1.jpg"
-          alt="Cyprus Eshop"
-          style="width: 400px; height: auto"
-        />
-        <p>
-          A slightly worse but cheaper Russian store, they sold me expired Kvass
-          though. Its extremely Russian-Patroit style with Kremlin paintings and
-          all, but weirdly they still sell Ukrainian products. This place is a weird 
-          blend of cultures, as they also sell middle eastern products.
-        </p>
-        <a href="https://maps.app.goo.gl/i3aFamB4UenCiYhp6" target="_blank"
-          >View on Google Maps</a
-        >
-        <div id="social" class="tab-content">
-        <h3>Social Factors</h3>
-          <p>
-            Germasogeia is very diverse, but people speak many languages, so communication
-             is simple and ordinary.
-          </p>
-      </div>
-        <div id="eco" class="tab-content">
-        <h3>Economical Factors</h3>
-          <p>
-            Since 2022, more and more rich slavic oligarchs have been moving here, 
-            causing rent and prices to skyrocket.
-          </p>
-      </div>
-        <div id="cult" class="tab-content">
-        <h3>Culture</h3>
-        <p>
-          Germasogeia is very diverse, housing plenty of Cypriots, Russians, Belarussians, Ukrainians and middle eastern people. The cultural blend is very diverse. 
-        </p>
-     </div>
-        <div id="infra" class="tab-content">
-        <h3>Infrastructure</h3>
-        <p>
-          The infrastructure has grown in a positive way, with many people investing in Limassol. Buses are still a horrible way of traveling, they haven't improved; 
-          only got more expensive.
-        </p>
-    </div>
-      <div id="details" class="tab-content">
-        <h3>Details</h3>
-        <p>
-          I loved making this website and learning about html in general. Since I'm 101% open source,
-          <a href="https://github.com/SashokTheHuman" target="_blank"
-          >here's</a> the link to my github page, where I have this website hosted. Thanks!
-        </p>
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Explore Germasogeia</h1>
+    <div class="tab-container">
+      <div class="tab" onclick="openTab('rusmarket')">RusMarket</div>
+      <div class="tab" onclick="openTab('skatepark')">Germasogeia SkatePark</div>
+      <div class="tab" onclick="openTab('berezkaG')">Germasogeia Berezka</div>
+      <div class="tab" onclick="openTab('lidlG')">Germasogeia Lidl</div>
+      <div class="tab" onclick="openTab('eshop')">Cyprus Eshop</div>
+      <div class="tab" onclick="openTab('kfc')">KFC</div>
+      <div class="tab" onclick="openTab('griver')">Germasogeia River</div>
+      <div class="tab" onclick="openTab('galatex')">Galatex</div>
+      <div class="tab" onclick="openTab('slavianka')">Slavianka</div>
+      <div class="tab" onclick="openTab('social')">Social Factors</div>
+      <div class="tab" onclick="openTab('eco')">Economical Factors</div>
+      <div class="tab" onclick="openTab('cult')">Culture</div>
+      <div class="tab" onclick="openTab('infra')">Infrastructure</div>
+      <div class="tab" onclick="openTab('details')">...</div>
     </div>
 
-    <script>
-      function openTab(tabId) {
-        var contents = document.getElementsByClassName("tab-content");
-        for (var i = 0; i < contents.length; i++) {
-          contents[i].classList.remove("active");
-        }
-        var targetTab = document.getElementById(tabId);
-        if (targetTab) {
-          targetTab.classList.add("active");
-        }
+    <div id="rusmarket" class="tab-content">
+      <h3>RusMarket</h3>
+      <img src="rusmarket.jpg" alt="RusMarket">
+      <p>A wonderful place for your Russian stuff...</p>
+      <a href="https://maps.app.goo.gl/hG6brKGXJ5sjYJ5Q8" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="skatepark" class="tab-content">
+      <h3>Germasogeia SkatePark</h3>
+      <img src="skatepark1.jpg" alt="Germasogeia SkatePark">
+      <p>The most horrid, vile, infected...</p>
+      <a href="https://maps.app.goo.gl/8oRViDzyuw3qECCSA" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="berezkaG" class="tab-content">
+      <h3>Germasogeia Berezka</h3>
+      <img src="berezka1.jpg" alt="Germasogeia Berezka">
+      <p>An even better place to get Slavic products...</p>
+      <a href="https://maps.app.goo.gl/VLzqGcmJpqzbq7ft7" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="lidlG" class="tab-content">
+      <h3>Germasogeia Lidl</h3>
+      <img src="lidl.jpg" alt="Germasogeia Lidl">
+      <p>A perfect location to legally obtain...</p>
+      <a href="https://maps.app.goo.gl/cJdpx6nz5Kfjr2ybA" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="eshop" class="tab-content">
+      <h3>Cyprus Eshop</h3>
+      <img src="eshop2.jpg" alt="Cyprus Eshop">
+      <p>A mid-at-best electronics shop...</p>
+      <a href="https://maps.app.goo.gl/FUSZZixFxrVFBHea7" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="kfc" class="tab-content">
+      <h3>KFC</h3>
+      <img src="kfc2.jpg" alt="KFC">
+      <p>A great place to eat something and enjoy...</p>
+      <a href="https://maps.app.goo.gl/guG7UTwRw4yjdTop6" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="griver" class="tab-content">
+      <h3>Germasogeia River</h3>
+      <img src="griver2.jpg" alt="Germasogeia River">
+      <p>A place for all the other cool gangsta...</p>
+      <a href="https://maps.app.goo.gl/AMUJHahquB7gsE33A" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="galatex" class="tab-content">
+      <h3>Galatex</h3>
+      <img src="galatex2.jpg" alt="Galatex">
+      <p>A weird location; center of operations...</p>
+      <a href="https://maps.app.goo.gl/wHaWGUdgNj38cVwYA" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="slavianka" class="tab-content">
+      <h3>Slavianka</h3>
+      <img src="slavianka2.jpg" alt="Slavianka">
+      <p>A slightly worse but cheaper Russian store...</p>
+      <a href="https://maps.app.goo.gl/i3aFamB4UenCiYhp6" target="_blank">View on Google Maps</a>
+    </div>
+
+    <div id="social" class="tab-content">
+      <h3>Social Factors</h3>
+      <p>Germasogeia is very diverse, but people...</p>
+    </div>
+
+    <div id="eco" class="tab-content">
+      <h3>Economical Factors</h3>
+      <p>Since 2022, more and more rich Slavic...</p>
+    </div>
+
+    <div id="cult" class="tab-content">
+      <h3>Culture</h3>
+      <p>Germasogeia is very diverse, housing...</p>
+    </div>
+
+    <div id="infra" class="tab-content">
+      <h3>Infrastructure</h3>
+      <p>The infrastructure has grown in a positive...</p>
+    </div>
+
+    <div id="details" class="tab-content">
+      <h3>Details</h3>
+      <p>I loved making this website and learning...</p>
+    </div>
+  </div>
+
+  <script>
+    function openTab(tabId) {
+      var contents = document.getElementsByClassName("tab-content");
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
       }
-    </script>
-  </body>
+      var targetTab = document.getElementById(tabId);
+      if (targetTab) {
+        targetTab.classList.add("active");
+      }
+    }
+  </script>
+</body>
 </html>
